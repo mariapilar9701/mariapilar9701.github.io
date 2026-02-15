@@ -5,7 +5,12 @@ body {
   background: black;
   margin: 40px;
 }
-
+a {
+  text-decoration: none;
+  color: lightblue;
+  text-align: center;
+}
+/*
 a {
   background: white;
   padding: 6px;
@@ -24,16 +29,12 @@ a:visited {
 a:active {
   Color: black;
 }
+  */
 a:hover {
   background: none;
   Color: lightgreen;
 }
-p:hover {
-  background: black;
-}
-a:focus {
-  /* outline: 1px solid black; */
-}
+
 
 .content-wrap {
   Max-width: 950px;
@@ -62,7 +63,7 @@ p {
 Header {
   background: "color"=black;
   Color: white;
-  font-family: "letter-gothic-recast";
+  font-family: "letter-gothic-recast", sans-serif;
 }
 
   h1 {
@@ -78,7 +79,7 @@ Header {
 Footer {
   background: "color"=white;
   Color: black;
-  font-family: "letter-gothic-recast";
+  font-family: "letter-gothic-recast", sans-serif;
   margin: 40px;
 }
 
@@ -102,6 +103,7 @@ Footer {
 }
 
 @font-face {
+    src: local();
     font-family: "letter-gothic-recast", sans-serif;
     font-weight: 400;
     font-style: normal;
@@ -125,5 +127,69 @@ html {
     display: none; 
 }
 
+.tech-heroes {
+display: block;
+background-color: gray;
+font-family: "letter-gothic-recast", sans-serif;
+h3 {
+  margin-bottom: 0;
+}
+p {
+  text-align: justify;
+  margin: 5%;
+  font-size: 16px;
+}
+}
 
+.left {
+  float: left;
+  width: 40%;
+  margin-left: 5%;
+}
 
+.right {
+  float: right;
+    width: 40%;
+      margin-right: 5%;
+}
+
+.profile-image {
+  float: left;
+  clip-path: circle();
+  width: 50%;
+}
+
+.sub-title {
+  font-size: 12px;
+  margin: 0;
+  color: white;
+}
+
+.navigation {
+  position: fixed;
+  bottom: 5%;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  display: flex;
+  flex-direction: row;
+  background-color: rgba(0, 0, 0, 0.75)
+}
+
+button {
+  color: lightblue;
+  font-family: 'Bytesquare', sans-serif;
+  font-size: 18px;
+  border: none;
+  background: none;
+  margin: 0 auto;
+  img {
+    height: 30px;
+    margin: 10px;
+  }
+  a {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+}
