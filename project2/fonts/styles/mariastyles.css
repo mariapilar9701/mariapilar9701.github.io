@@ -1,0 +1,581 @@
+/* Global styles
+--------------------------*/
+
+body {
+  background: black;
+  margin: 0;
+}
+
+#index-page h2 {
+  margin: 0 0 8px 0;   /* gap under PRESS */
+  margin-bottom: 0;
+}
+
+#index-page .blinking-header {
+  margin-top: 100px; 
+  padding: 0;
+}
+
+#index-page .center-container {
+  margin: 0;
+  padding: 0;
+}
+
+
+
+/* Image Styles
+--------------------------- */
+
+a img {
+    display: block;
+    margin: 0px;
+    padding: 0px;
+    width: 400px; 
+    height: auto; 
+    transition: transform 0.3s ease-in-out; 
+    background-color: none;
+    border: none;
+    outline: none;
+    margin-top: 0;
+}
+
+a img:hover {
+    transform: scale(1.4); 
+    cursor: pointer; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
+
+.image-button:hover img {
+    opacity: 0.8; /* Example hover effect: slightly dim the image */
+}
+
+.center-container {
+  display: grid;
+  place-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+#index-page h2 {
+  margin-top: 60px;
+  margin-bottom: 2px;
+}
+
+
+/* Hamburger Button Glow
+-------------------------*/
+
+.icon {
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.icon:hover {
+  transform: scale(1.1);
+  box-shadow:
+    0 0 10px yellow,
+    0 0 20px #66ccff;
+}
+
+
+/* Paragraph styles
+--------------------------*/
+
+.press-text {
+  margin-bottom: 0;
+  Line-height: 5;
+}
+
+p {
+  text-align: center;
+  color: white;
+  font-family: "letter-gothic-recast", sans-serif;
+  font-size: 24px;
+  margin-bottom: 10 px;
+}
+
+.highlight {
+  font-size: 1.5em; /* Using relative units like 'em' is often recommended */
+  color: yellow;
+}
+
+
+/* Header styles
+--------------------------*/
+
+header {
+  background: none;
+  color: white;
+  font-family: "letter-gothic-recast";
+  text-align: center;
+  position: relative;
+}
+
+  h1 {
+    text-align: center;
+    color: lightblue;
+    font-family: 'Bytesquare', sans-serif;
+    font-size: 100px;
+}
+
+  h2 {
+    font-size: 60px;
+    text-align: center;
+    color: white;
+    font-family: 'Bytesquare', sans-serif;
+    margin-top: 20px;
+    Margin-bottom: 0px;
+    
+}
+
+/* Apply the animation to the header */
+.blinking-text {
+  text-align: center;
+  animation: blink 1.7s infinite;
+  display: inline-block; /* prevents full-line flicker effect */
+  text-shadow: 0 0 8px #ffe066;
+  background: none;
+}
+
+@keyframes blink {
+  0%   { opacity: 1; }
+  60%  { opacity: 1; }   /* stays visible */
+  61%  { opacity: 0; }
+  80%  { opacity: 0; }   /* stays gone */
+  100% { opacity: 1; }   /* comes back */
+}
+
+
+/* Nav Bar styles
+--------------------------------------------------*/
+.navbar {
+  position: relative;
+  display: inline-block;
+}
+
+/* Pixel Hamburger Button 
+-----------------------------*/
+.pixel-bar {
+  width: 40px;
+  height: 8px;
+  background-color: white;
+  margin: 6px 0;
+  image-rendering: pixelated;
+  box-shadow: 4px 4px 0px gray;
+}
+
+/* Nav Pop Up 
+-----------------------------*/
+
+.icon {
+  cursor: pointer;
+  padding: 20px;
+  background: lightblue;
+  border: 4px solid white;
+  display: inline-block;
+}
+
+.menu-popup {
+  display: none;
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+
+  background-color: lightblue;
+  border: 4px solid white;
+  width: 280px;
+
+  padding: 8px 0;
+}
+
+/* INDEX PAGE FLOATING HAMBURGER */
+#index-page .navbar {
+  position: fixed;
+  bottom: 120px;
+  left: 20px;
+  z-index: 3000;
+}
+
+/* Popup opens upward */
+#index-page .menu-popup {
+  position: absolute;
+  bottom: 100%;
+  margin-bottom: 10px;
+}
+
+.navbar:hover .menu-popup {
+  display: block;
+}
+
+.navbar::after {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  width: 100%;
+  height: 15px;   
+}
+
+.show {
+  display: block;
+}
+
+.menu-popup a {
+  display: block;
+  padding: 16px;
+  color: black;
+  text-decoration: none;
+  font-family: 'Bytesquare', sans-serif;
+  border-bottom: 2px solid white;
+  font-size: 20px;
+}
+
+.menu-popup a:last-child {
+  border-bottom: none;
+}
+
+.menu-popup a:hover {
+  background-color: yellow;
+}
+
+/* Pixel Next Arrow Button 
+-----------------------------*/
+
+.arrow-container img {
+  width: 60px;
+  image-rendering: pixelated;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.prev-arrow-container:hover img,
+.arrow-container:hover img {
+  filter:
+    drop-shadow(0 0 8px white)
+    drop-shadow(0 0 15px lightblue);
+}
+
+/* =========================
+   NEXT LABEL
+========================= */
+
+.next-label {
+  font-family: 'Bytesquare', sans-serif;
+  color: white;
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 4px;
+  letter-spacing: 2px;
+}
+
+
+/* =========================
+   PREVIOUS ARROW
+========================= */
+
+.prev-arrow-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.prev-label {
+  font-family: 'Bytesquare', sans-serif;
+  color: white;
+  font-size: 24px;
+  margin-bottom: 6px;
+  letter-spacing: 2px;
+}
+
+.prev-arrow-container img {
+  width: 60px;
+  image-rendering: pixelated;
+  transform: scaleX(-1);
+  transition: transform 0.3s ease;
+}
+
+/* Keep flip stable on hover */
+.prev-arrow-container:hover img {
+  transform: scaleX(-1) scale(1.15);
+}
+
+.bottom-ui-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+
+  background: black;
+
+  display: grid;
+  grid-template-columns: auto auto 1fr auto;
+  align-items: center;
+  column-gap: 40px;
+
+  padding: 15px 30px;
+  box-sizing: border-box;
+  z-index: 5000;
+}
+
+.bottom-ui-bar .navbar {
+  position: relative;   /* IMPORTANT */
+}
+
+/* LEFT SIDE GROUP */
+.left-ui {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  margin-right: auto;  /* forces it left */
+}
+
+.arrow-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: auto;
+}
+
+.prev-arrow-container img {
+  width: 60px;
+  image-rendering: pixelated;
+  transform: scaleX(-1);
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* Flip previous arrow */
+.prev-arrow-container img {
+  transform: scaleX(-1);
+}
+
+.bottom-title {
+  font-family: 'Bytesquare', sans-serif;
+  color: lightblue;
+  font-size: 50px;
+  letter-spacing: 3px;
+  text-align: center;
+  -webkit-text-stroke-width: 0.5px;
+  -webkit-text-stroke-color: lightblue;
+}
+
+/* Stat styles
+--------------------------*/
+.stat {
+  background: black;
+}
+
+/* Font faces
+--------------------------*/
+@font-face {
+  font-family: 'RadioNewsman';
+  src: url(../fonts/RadioNewsman.ttf);
+}
+
+@font-face {
+  font-family: 'Bytesquare';
+  src: url(../fonts/BytesquareRegular.ttf)
+}
+
+@font-face {
+  font-family: "letter-gothic-recast", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+/* ================================
+   CHARACTER SELECT PAGE
+================================ */
+
+.character-page {
+  background: black;
+  color: white;
+  font-family: 'letter-gothic-recast', sans-serif;
+  text-align: center;
+  padding-bottom: 120px;
+}
+
+.character-title {
+ font-size: 80px;
+    color: white; /* This sets the fill color of the text */
+    -webkit-text-stroke-width: 0.5px; /* Sets the width of the border */
+    -webkit-text-stroke-color: lightblue; /* Sets the color of the border */
+    /* Fallback for non-webkit browsers */
+    text-stroke-width: 1px;
+    text-stroke-color: lightblue;
+    font-family: 'Bytesquare';
+    margin: 0;
+}
+
+.character-container {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+/* ================================
+   CHARACTER CARD
+================================ */
+
+.character-card {
+  background: #336699;
+  border: 6px solid #0099cc;
+  width: 500px;
+  max-width: 90%;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  image-rendering: pixelated;
+  position: relative;
+  max-height: none;
+}
+
+.character-card {
+  background: #336699;
+  border: 6px solid #0099cc;
+  width: 500px;
+  max-width: 90%;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  image-rendering: pixelated;
+  position: relative;
+}
+
+/* Glow effect */
+.character-card:hover {
+  transform: scale(1.05);
+  box-shadow:
+    0 0 15px lightblue,
+    0 0 30px #00ccff,
+    0 0 45px #0099cc;
+}
+
+/* ================================
+   IMAGE SECTION
+================================ */
+
+.character-image {
+  background: #336699;
+  padding: 15px;
+}
+
+.character-image img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  box-shadow: 6px 6px 0px black;
+  image-rendering: pixelated;
+}
+
+/* ================================
+   TRAITS
+================================ */
+
+.character-traits {
+  padding: 5px;
+  text-align: left;
+  font-family: "letter-gothic-recast", sans-serif;
+  color: white;
+}
+
+.character-traits p {
+  margin: 4px 0;
+}
+
+/* 
+   EXPAND BUTTON
+---------------------------------- */
+
+.expand-btn {
+  color: white;
+  cursor: pointer;
+  font-size: 22px;
+  margin: 6px 0 10px 0;
+  position: relative;
+  z-index: 10;
+  transition: transform 0.3s ease, text-shadow 0.3s ease;
+}
+
+.expand-btn:hover {
+  transform: translateY(-5px) scale(1.2);
+  text-shadow: 0 0 8px white, 0 0 15px lightblue;
+}
+
+/* ================================
+   EXPANDABLE SECTION
+================================ */
+
+.character-extra {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 15px;
+  text-align: left;
+  background: #336699;
+  transition: max-height 0.4s ease, padding 0.3s ease;
+  color: white;
+  transition: max-height 0.6s ease;
+}
+
+.show-extra {
+  max-height: 7000px;
+  padding: 15px;
+}
+
+/* =========================
+   PIXEL STARS - INDEX PAGE
+========================= */
+
+#index-page header,
+#index-page .center-container,
+#index-page .bottom-ui-bar,
+#index-page .navbar {
+  position: relative;
+  z-index: 5;
+}
+
+#index-page::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+
+  background-image:
+    radial-gradient(#ffe066 1.5px, transparent 1.5px),
+    radial-gradient(#ffe066 1.5px, transparent 1.5px),
+    radial-gradient(#ffe066 1px, transparent 1px),
+    radial-gradient(#ffe066 1px, transparent 1px),
+    radial-gradient(#ffe066 1px, transparent 1px); /* micro layer */
+
+  background-size:
+    180px 180px,
+    260px 260px,
+    140px 140px,
+    320px 320px,
+    90px 90px; /* much tighter grid */
+
+  background-position:
+    37px 83px,
+    121px 197px,
+    73px 41px,
+    211px 289px,
+    45px 60px; /* small offset to break symmetry */
+
+  opacity: 0.9;
+}
+
+#index-page::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 224, 102, 0.10) 0%,
+    rgba(255, 224, 102, 0.05) 25%,
+    rgba(0, 0, 0, 0) 60%
+  );
+}
