@@ -201,7 +201,7 @@ border-radius: 4px;
     text-align: justify;
   }
 }
-.inter-section, .ai-resources {
+.inter-section, .ai-resources, .inter-resource-resources {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -226,7 +226,7 @@ blockquote {
   color: darkgreen;
 }
 
-.implicit-section, .inter-section, .ai-section{
+.implicit-section, .inter-section, .ai-section, .inter-resource-section{
   h2, h3, h4, p, li, blockquote  {
     color: #660606;
   }
@@ -267,6 +267,30 @@ ul {
 .joy {
   width: 90%;
   margin: 0 auto;
+}
+
+.inter-resource-section {
+  padding: 10px 25px;
+  background-color: #f0dcb6;
+  border-radius: 4px;
+  width:90%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.inter-resource-resources h4 {
+    min-height: 56px;
+    align-content: center;
+}
+
+.inter-resource-resources div {
+  width: 40%;
+  margin: 5px auto;
+}
+
+.iframe-container {
+  text-align: center;
+  padding: 10px 20px 40px;
 }
 
 .ai-section {
