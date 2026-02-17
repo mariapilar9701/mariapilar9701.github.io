@@ -21,7 +21,12 @@ body {
   padding: 0;
 }
 
-
+#index-page .navbar {
+  position: fixed;
+  left: 60px;
+  top: 640px;
+  z-index: 3000;
+}
 
 /* Image Styles
 --------------------------- */
@@ -187,14 +192,6 @@ header {
   padding: 8px 0;
 }
 
-/* INDEX PAGE FLOATING HAMBURGER */
-#index-page .navbar {
-  position: fixed;
-  bottom: 120px;
-  left: 20px;
-  z-index: 3000;
-}
-
 /* Popup opens upward */
 #index-page .menu-popup {
   position: absolute;
@@ -299,6 +296,7 @@ header {
   transform: scaleX(-1) scale(1.15);
 }
 
+
 .bottom-ui-bar {
   position: fixed;
   bottom: 0;
@@ -308,13 +306,29 @@ header {
   background: black;
 
   display: grid;
-  grid-template-columns: auto auto 1fr auto;
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
-  column-gap: 40px;
 
   padding: 15px 30px;
   box-sizing: border-box;
   z-index: 5000;
+}
+
+/* Left and right sections */
+.left-section {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  justify-self: start;
+}
+
+.arrow-container {
+  justify-self: end;
+}
+
+/* Perfect center alignment */
+.bottom-title {
+  justify-self: center;
 }
 
 .bottom-ui-bar .navbar {
@@ -437,19 +451,50 @@ header {
   width: 500px;
   max-width: 90%;
   overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
   image-rendering: pixelated;
   position: relative;
+  transition: box-shadow 0.3s ease;
+
 }
 
-/* Glow effect */
-.character-card:hover {
-  transform: scale(1.05);
-  box-shadow:
-    0 0 15px lightblue,
-    0 0 30px #00ccff,
-    0 0 45px #0099cc;
+/* Name line layout */
+.name-line {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
+
+/* LinkedIn icon styling */
+.linkedin-icon {
+  width: 24px;
+  height: 24px;
+  image-rendering: pixelated;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  cursor: pointer;
+}
+
+.linkedin-icon:hover {
+  transform: scale(1.2);
+  filter:
+    drop-shadow(0 0 6px white)
+    drop-shadow(0 0 12px lightblue);
+}
+
+/*Email Contact Styling-----------------------
+---------------------------------------------*/
+.email-link {
+  color: yellow;
+  text-decoration: none;
+  transition: text-shadow 0.3s ease;
+}
+
+.email-link:hover {
+  text-shadow:
+    0 0 8px white,
+    0 0 15px yellow;
+}
+
+
 
 /* ================================
    IMAGE SECTION
@@ -526,10 +571,13 @@ header {
    PIXEL STARS - INDEX PAGE
 ========================= */
 
+#index-page .center-container {
+  position: relative;
+}
+
 #index-page header,
 #index-page .center-container,
-#index-page .bottom-ui-bar,
-#index-page .navbar {
+#index-page .bottom-ui-bar, {
   position: relative;
   z-index: 5;
 }
@@ -578,4 +626,197 @@ header {
     rgba(255, 224, 102, 0.05) 25%,
     rgba(0, 0, 0, 0) 60%
   );
+}
+
+/* TOP CARD STYLES ------------------------------------
+---------------------------------------------------- */
+.top-info-card {
+  width: 100%;
+  background: #336699;
+  border-bottom: 6px solid #0099cc;
+  padding: 50px 20px;
+  box-sizing: border-box;
+  image-rendering: pixelated;
+}
+
+.top-info-content {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+  color: white;
+  font-family: "letter-gothic-recast", sans-serif;
+  font-size: 24px;
+}
+
+/* Hide checkbox */
+.expand-toggle {
+  display: none;
+}
+
+/* Expand button styling */
+.top-expand {
+  display: inline-block;
+  margin-top: 20px;
+  font-family: 'Bytesquare', sans-serif;
+  font-size: 22px;
+  cursor: pointer;
+  transition: transform 0.3s ease, text-shadow 0.3s ease;
+}
+
+.top-expand:hover {
+  transform: translateY(-5px) scale(1.1);
+  text-shadow: 0 0 8px white, 0 0 15px lightblue;
+}
+
+/* Expandable content */
+.top-extra {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.6s ease, padding 0.4s ease;
+}
+
+/* When checkbox is checked */
+.expand-toggle:checked ~ .top-extra {
+  max-height: 1000px;
+  padding-top: 20px;
+}
+
+/* Rotate arrow when open */
+.expand-toggle:checked + .top-expand {
+  transform: rotate(180deg);
+}
+
+/* LinkedIn button wrapper */
+.linkedin-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  width: 32px;
+  height: 32px;
+  border: 3px solid #0099cc;
+  box-shadow: 3px 3px 0px black;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* LinkedIn icon inside */
+.linkedin-button img {
+  width: 18px;
+  height: 18px;
+  image-rendering: pixelated;
+}
+
+/* Hover effect */
+.linkedin-button:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    0 0 8px white,
+    0 0 15px lightblue;
+}
+
+.top-info-card {
+  margin-bottom: 120px; /* creates breathing room */
+}
+
+/* =================================
+   STARS BEHIND CHARACTER CARDS
+================================= */
+
+.character-page {
+  position: relative;
+  background: black;
+  overflow-x: hidden;
+}
+
+/* Star layer */
+.character-page::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+
+  background-image:
+    radial-gradient(#ffe066 1.5px, transparent 1.5px),
+    radial-gradient(#ffe066 1.5px, transparent 1.5px),
+    radial-gradient(#ffe066 1px, transparent 1px),
+    radial-gradient(#ffe066 1px, transparent 1px),
+    radial-gradient(#ffe066 1px, transparent 1px);
+
+  background-size:
+    180px 180px,
+    260px 260px,
+    140px 140px,
+    320px 320px,
+    90px 90px;
+
+  background-position:
+    37px 83px,
+    121px 197px,
+    73px 41px,
+    211px 289px,
+    45px 60px;
+
+  opacity: 0.9;
+}
+
+.character-page::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 224, 102, 0.10) 0%,
+    rgba(255, 224, 102, 0.05) 25%,
+    rgba(0, 0, 0, 0) 60%
+  );
+}
+
+/* =================================
+   MOBILE RESPONSIVE
+================================= */
+
+@media (max-width: 768px) {
+
+  /* Stack character cards */
+  .character-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .character-card {
+    width: 95%;
+  }
+
+  /* Reduce large title size */
+  .bottom-title {
+    font-size: 28px;
+  }
+
+  /* Shrink nav labels */
+  .prev-label,
+  .next-label {
+    font-size: 16px;
+  }
+
+  /* Reduce arrow size */
+  .arrow-container img,
+  .prev-arrow-container img {
+    width: 40px;
+  }
+
+  /* Stack bottom nav tighter */
+  .left-section {
+    gap: 15px;
+  }
+
+  /* Reduce intro text size */
+  .top-info-content {
+    font-size: 18px;
+  }
+
 }
