@@ -394,6 +394,7 @@ header {
   font-family: "letter-gothic-recast", sans-serif;
   font-weight: 400;
   font-style: normal;
+  src:local()
 }
 
 
@@ -415,8 +416,8 @@ header {
     -webkit-text-stroke-width: 0.5px; /* Sets the width of the border */
     -webkit-text-stroke-color: lightblue; /* Sets the color of the border */
     /* Fallback for non-webkit browsers */
-    text-stroke-width: 1px;
-    text-stroke-color: lightblue;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: lightblue;
     font-family: 'Bytesquare';
     margin: 0;
 }
@@ -577,7 +578,7 @@ header {
 
 #index-page header,
 #index-page .center-container,
-#index-page .bottom-ui-bar, {
+#index-page .bottom-ui-bar {
   position: relative;
   z-index: 5;
 }
