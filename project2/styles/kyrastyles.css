@@ -131,16 +131,14 @@ p {
     font-style: normal;
 }
 
-/* Glow effect */
-.tech-heroes:hover {
-  filter: drop-shadow(10px 10px 8px #404045);
-}
+
 
 
 /*Tech Heroes*/
 .tech-heroes {
 display: block;
 background: rgb(1, 53, 6);
+border-radius: 4px;
 border: 6px solid rgb(6, 99, 15);
 image-rendering: pixelated;
 transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -160,6 +158,10 @@ p {
   margin: 5%;
   font-size: 16px;
 }
+}
+/* Glow effect */
+.tech-heroes:hover {
+  filter: drop-shadow(0 0 15px rgb(9, 201, 28));
 }
 
 .left {
@@ -187,7 +189,15 @@ p {
   color: white;
 }
 
-/*Resources */
+@media (max-width: 1250px) { 
+  .left, .right {
+    float: none;
+    width: 95%;
+    margin: 55px auto;
+  }
+}
+
+/* Resources Page */
 .resources {
   display: block;
   padding: 30px 15px 70px 15px;
@@ -200,6 +210,17 @@ border-radius: 4px;
   p {
     text-align: justify;
   }
+}
+
+
+.implicit-section, .inter-section, .ai-section, .inter-resource-section{
+  h2, h3, h4, p, li, blockquote  {
+    color: #660606;
+  }
+}
+
+.inter-section, .joy {
+   margin-bottom: 50px;
 }
 .inter-section, .ai-resources, .inter-resource-resources {
   display: flex;
@@ -224,12 +245,6 @@ blockquote {
 .crenshaw {
   font-size: 14px;
   color: darkgreen;
-}
-
-.implicit-section, .inter-section, .ai-section, .inter-resource-section{
-  h2, h3, h4, p, li, blockquote  {
-    color: #660606;
-  }
 }
 
 .implicit-section {
@@ -311,6 +326,19 @@ ul {
   width: 40%;
   margin: 5px auto;
 }
+
+@media (max-width: 1250px) { 
+.inter-section, .ai-resources, .inter-resource-resources {
+  display: block;
+}
+.resources {
+  width: 100%;
+}
+.inter-section div, .inter-resource-resources div, .ai-resources div {
+  width: 95%;
+}
+}
+
 
 /* Nav Bar styles
 --------------------------------------------------*/
