@@ -171,7 +171,24 @@ p {
   border: 6px solid rgb(6, 99, 15);
   image-rendering: pixelated;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 24px;
 }
+
+.women-in-tech {
+  display: flex;
+  justify-content: space-around;
+}
+
+.women-in-tech div {
+  width:40%;
+  text-align:center;
+  align-self: center;
+}
+
+.women-in-tech img {
+  max-width: 500px;
+}
+
 /* Glow effect */
 .tech-heroes:hover, .stem-section:hover {
   filter: drop-shadow(0 0 20px rgb(9, 201, 28));
@@ -237,12 +254,19 @@ p {
   align-items: center;
   justify-self:center;
   margin: 20px auto;
+  text-align: center;
 }
 
 .quick-nav h4 {
   margin: 8px;
+  font-size: 1.5em;
+  text-decoration: underline;
   font-family: 'Bytesquare', sans-serif;
   color: #f0dcb6;
+}
+
+.quick-nav ul {
+  padding: 0;
 }
 
 .quick-nav li {
