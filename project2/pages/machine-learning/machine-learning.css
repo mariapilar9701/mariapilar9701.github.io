@@ -1,0 +1,76 @@
+body {
+    margin: 0 auto;
+    width: 80%;
+}
+.ml-video {
+    h4 {
+        color: yellow;
+    }
+}
+
+.what-div, .how-div, .ml-project, .ml-try {
+    margin-top: 32px;
+}
+
+.ml-project, .ml-what, .ml-how, .ml-try {
+background-color: #f0f0f0;
+padding: 15px;
+text-align: center;
+h4, p, li, span {
+    color: black;
+    margin: 16px auto;
+}
+}
+
+.what-div, .how-div {
+    display: flex;
+justify-content: space-around;
+align-items: center;
+div {
+    width: 60%;
+}
+}
+
+.ml-button {
+  width: 155px;
+  height: 50px;
+  margin-bottom: 35px;
+  border: none;
+  border-radius: 4px;
+  font-family: "letter-gothic-recast", sans-serif;
+  font-size: 36px;
+  font-weight: bold;
+  color: yellow;
+  background-color:unset;
+}
+.ml-button:hover {
+  background-color:#fff56b; 
+  color:rgb(0, 0, 0);
+  cursor: pointer;
+
+}
+
+.learn-button {
+  width: 175px;
+  height: 40px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+    font-weight: bold;
+    background-color: black;
+  color: white;
+}
+.learn-button:hover {
+  background-color:#fff56b; 
+  color:black;
+  cursor: pointer;
+
+}
+
+p, li {
+    width: 90%;
+}
+
+img {
+    width: 25%;
+}
