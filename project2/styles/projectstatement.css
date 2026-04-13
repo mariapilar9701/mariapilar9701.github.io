@@ -97,6 +97,21 @@
           0 0 15px white;
 }
 
+/* LINK TEXT UNMASKING AI */
+.unmasking-ai a {
+  color: black;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+/* HOVER EFFECT UNMASKING AI */
+.unmasking-ai a:hover {
+  color: yellow;
+  text-shadow:
+          0 0 8px yellow,
+          0 0 15px white;
+}
+
 /* SCROLL TARGET SPACING */
 .lesson-block {
   margin-bottom: 40px;
