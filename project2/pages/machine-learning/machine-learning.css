@@ -6,11 +6,11 @@ body {
         color: yellow;
 }
 
-.ml-what span {
+.ml-what span, .ml-how span {
     font-size: 24px;
 }
 
-.what-div, .how-div, .ml-project, .ml-try {
+.what-div, .how-div, .ml-project, .ml-try, .ml-video {
     margin-top: 32px;
 }
 
@@ -18,12 +18,18 @@ body {
 background-color: #f0f0f0;
 padding: 15px;
 text-align: center;
-h4, p, li, span {
+h4, h5, p, li, span {
     color: black;
     margin: 16px auto;
 }
 }
 
+.ml-project a {
+    color: #c45004;
+}
+.ml-project a:hover {
+    color: #0478c4;
+}
 .what-div, .how-div {
     display: flex;
 justify-content: space-around;
@@ -76,6 +82,25 @@ div {
 
 }
 
+.ml-container {
+    display: flex;
+    margin: 0 auto;
+    justify-content: space-around;
+    align-items: center;
+    width: 60%;
+}
+
+.ml-video {
+    align-items: center;
+    text-align: center;
+}
+
+.video {
+    width: 70%;
+    max-width: 900px;
+}
+
+
 p, li {
     width: 90%;
 }
@@ -100,4 +125,5 @@ img {
     margin: 30px;
 }
 }
+
 }

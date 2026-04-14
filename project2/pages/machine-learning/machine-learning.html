@@ -38,7 +38,7 @@
         // Convenience function to setup a webcam
         const flip = true; // whether to flip the webcam
         if (!webcam) {
-        webcam = new tmImage.Webcam(200, 200, flip); // width, height, flip
+        webcam = new tmImage.Webcam(300, 300, flip); // width, height, flip
         await webcam.setup(); // request access to the webcam
         }
         await webcam.play();
@@ -90,6 +90,7 @@
 <p>
 The categories for our machine learning project were chosen to match both the theme of our website’s design and also some of the content concepts. A ghost was chosen as a reference to the “Ghost in the Machine” film that inspired the name of our website. The sun and shooting stars are a representational mix of the background design of the website and electricity which the machine requires. The cloud is a reference to the technological cloud which is ever present in our daily lives, especially as students.
 </p>
+<p><a href="#test">You can test it yourself</a> right away, or contrinue scrolling to learn more about our process.</p>
 <div class="ml-sample">
   <p>Example Sample Images:</p>
 <img src="../../images/sun-sample.jpg" alt="image of sun sample"/>
@@ -101,27 +102,19 @@ The categories for our machine learning project were chosen to match both the th
 </div>
 <div class="ml-video">
   <!--Recording of Machine Learning Test-->
-  <h4>PLACEHOLDER</h4>
+  <video controls muted class="video">
+    <source src="../../images/machine-learning.mp4" type="video/mp4" alt="video of machine categorizing images"/>
+  </video>
 </div>
 
 <div class="how-div">
   <img src="../../images/shooting-star.png" width="30%" alt="shooting start icon"/>
 <div class="ml-how">
-  <h4>How does it work?</h4>
-  <p>Brief Description about how it works, like how it was made, maybe code snippets?</p>
-  <p>Our Process: We used this google thing for most of it.</p>
-  <a href="https://teachablemachine.withgoogle.com/" target="_blank"><button class="learn-button">Teachable Machine</button></a>
-
-</div>
-</div>
-
-<div class="what-div">
-  <div class="ml-what">
   <h4>Our Process</h4>
-<p>
-  While our process was mostly linear, we did encounter some trial and error along the way.
+    <p>
+  While our process was mostly straightforward, we did encounter some bumps along the way.
 </p>
-
+  <h5>The First Attempt</h5>
 <p>To begin, we selected a theme for our project that would fit our previous project. Based on that theme, we came up with the categories: star, shooting star, ghost, and moon. In order to give the machine varying samples to learn from, we decided to both draw in more than one style along with only some images using color. 
 </p>
 <span>&#8681;</span>
@@ -133,15 +126,32 @@ The categories for our machine learning project were chosen to match both the th
 <span>&#8681;</span>
 <p>While we tested our trained model, we noticed that the “ghost” category was not as accurate as we had expected. Our project would require more examples for the learning process. 
 </p>
-<span>&#8681;</span>
-<p>At this point, we had four categories which had equal numbers of samples for the machine to learn from. We decided to intentionally create a new category that would have significantly less sample data. We decided to create the “cloud” category and create one-third of the samples compared to the other categories.
+</div>
+</div>
+
+<div class="what-div">
+  <div class="ml-what">
+  <h4>Our Process</h4>
+<h5>Trying Again</h5>
+<p>At this point, we had four categories which had equal numbers of samples for the machine to learn from. We decided to create a new category that would intentionally have significantly less sample data. 
+</p>
+<p>We created the “cloud” category and with only one-third of the samples compared to the other categories.
 </p>
 <span>&#8681;</span>
-<p>With the newly added sample data, we retrained the machine and were satisfied with its performance. 
+<p>
+  We also added some more samples for the "ghost", which had low accuracy during the first attempt.
+  </p>
+<span>&#8681;</span>
+<p>
+  With the newly added sample data, we retrained the machine and were satisfied with its performance. 
 </p>
 <span>&#8681;</span>
-<p>Exporting the files from the Teachable Machine website and integrating them into our page design was a very simple process. After a few tweaks to add a stop button and fix some stylistic choices, it was ready to test. 
+<p>Exporting the files from the Teachable Machine website and integrating them into our page design was a very simple process. After a few tweaks to add a stop button and fix some stylistic choices, it was ready to go. 
 </p>
+<br>
+  <p>Want to learn more about the Teachable Machine?</p>
+  <a href="https://teachablemachine.withgoogle.com/" target="_blank"><button class="learn-button">Teachable Machine</button></a>
+
 </div>
   <img src="../../images/moon.png" width="30%" alt="moon icon"/>
 </div>
@@ -149,23 +159,26 @@ The categories for our machine learning project were chosen to match both the th
 <!--Machine Learning Testing Section-->
 <div class="ml-try">
 <h4>Try it yourself!</h4>
-<p>Instructions</p>
+<p>Instructions -
+  <span>just follow these simple steps:</span></p>
 
 <ol>
-  <span>Just follow these simple steps:</span>
-  <li>Prepare your "test object". In order to get a strong match, this should be a sketch of a moon, shooting star, sun, or cloud.</li>
+  <li>Prepare your "test object" - a drawing of a moon, shooting star, sun, or cloud.</li>
   <li>Click the "Start" button. Testing this process requires access to a webcam.</li>
   <li>Hold up your sketch to the camera.</li>
   <li>Optional: You can click the "Stop" button to pause the webcam. Simply click "Start" again to resume.</li>
 </ol>
 </div>
 
-<div class="ml-test">
+<div id="test" class="ml-test">
 <h4>
 <button type="button" class="ml-button" onclick="start()">Start</button>
 <button type="button" class="ml-button" onclick="pause()">Stop</button>
-<div id="webcam-container"></div>
-<div id="label-container"></div>
+<div class="ml-container">
+  <div id="webcam-container"></div>
+  <div id="label-container"></div>
+</div>
+
 </h4>
 </div>
 
