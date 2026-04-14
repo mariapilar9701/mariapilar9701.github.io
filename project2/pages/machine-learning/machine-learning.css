@@ -2,10 +2,12 @@ body {
     margin: 0 auto;
     width: 80%;
 }
-.ml-video {
-    h4 {
+.ml-video h4 {
         color: yellow;
-    }
+}
+
+.ml-what span {
+    font-size: 24px;
 }
 
 .what-div, .how-div, .ml-project, .ml-try {
@@ -29,6 +31,13 @@ align-items: center;
 div {
     width: 60%;
 }
+}
+
+.ml-sample {
+    align-items: center;
+}
+.ml-sample img {
+    width: 150px;
 }
 
 .ml-button {
@@ -73,4 +82,20 @@ p, li {
 
 img {
     width: 25%;
+}
+
+@media (max-width: 1250px) { 
+.what-div, .how-div {
+    display: block;
+    text-align: center;
+div {
+    width: 90%;
+    margin: 0 auto;
+}
+img {
+    margin: 30px;
+}
+}
+
+
 }
