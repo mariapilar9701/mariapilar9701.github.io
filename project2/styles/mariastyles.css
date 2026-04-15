@@ -313,7 +313,7 @@ header {
   left: 0;
   width: 100%;
 
-  background: rgba(0, 0, 0, .9);
+  background: rgba(0, 0, 0, .45);
 
   display: grid;
   grid-template-columns: 1fr auto 1fr;
