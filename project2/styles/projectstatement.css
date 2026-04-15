@@ -81,12 +81,6 @@
   z-index: 2;
 }
 
-.glow-heading {
-  text-shadow:
-    0 0 2px #ffe066,
-    0 0 4px #ffd700;
-}
-
 .section-title {
   font-size: clamp(2.2rem, 4vw, 4rem);
   margin-top: 0;
