@@ -529,3 +529,51 @@
     right: 28px;
   }
 }
+
+.project-bottom-bar {
+  background: rgba(35, 0, 20, 0.55);
+  backdrop-filter: blur(4px);
+}
+
+.project-bottom-bar .prev-label,
+.project-bottom-bar .next-label {
+  font-family: "Bytesquare", sans-serif;
+  color: white;
+  font-size: 22px;
+  letter-spacing: 1px;
+}
+
+.project-bottom-bar .bottom-title {
+  font-family: "Bytesquare", sans-serif;
+  color: lightblue;
+  font-size: clamp(2.2rem, 3vw, 3.6rem);
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+.project-bottom-bar .prev-arrow-container img,
+.project-bottom-bar .arrow-container img {
+  width: 60px;
+  image-rendering: pixelated;
+}
+
+.project-bottom-bar .left-section {
+  align-items: center;
+  gap: 36px;
+}
+
+@media (max-width: 900px) {
+  .project-bottom-bar .prev-label,
+  .project-bottom-bar .next-label {
+    font-size: 16px;
+  }
+
+  .project-bottom-bar .bottom-title {
+    font-size: 1.8rem;
+  }
+
+  .project-bottom-bar .prev-arrow-container img,
+  .project-bottom-bar .arrow-container img {
+    width: 42px;
+  }
+}
