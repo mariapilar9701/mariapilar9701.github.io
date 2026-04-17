@@ -535,6 +535,7 @@ ul {
   font-family: 'Bytesquare', sans-serif;
   border-bottom: 2px solid white;
   font-size: 20px;
+  text-align: left;
 }
 
 .menu-popup a:last-child {
