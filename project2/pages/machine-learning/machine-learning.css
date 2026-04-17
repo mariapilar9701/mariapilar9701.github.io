@@ -1,3 +1,4 @@
+
 html {
     scroll-behavior: smooth;
 }
@@ -6,14 +7,28 @@ body {
     width: 80%;
 }
 
+/*Video Styles*/
 .ml-video h4 {
         color: yellow;
 }
+
+.ml-video {
+    align-items: center;
+    text-align: center;
+}
+
+.video {
+    width: 70%;
+    max-width: 900px;
+}
+
+
 
 .ml-what span, .ml-how span {
     font-size: 24px;
 }
 
+/*main section and div styles*/
 .what-div, .how-div, .ml-project, .ml-try, .ml-video {
     margin-top: 32px;
 }
@@ -28,20 +43,12 @@ h4, h5, p, li, span {
     margin: 16px auto;
 }
 }
-
+/*Project Overview Section*/
 .ml-project a {
     color: #c45004;
 }
 .ml-project a:hover {
     color: #0478c4;
-}
-.what-div, .how-div {
-    display: flex;
-justify-content: space-around;
-align-items: center;
-div {
-    width: 60%;
-}
 }
 
 .ml-sample {
@@ -49,6 +56,16 @@ div {
 }
 .ml-sample img {
     width: 150px;
+}
+
+/*Project process sections*/
+.what-div, .how-div {
+    display: flex;
+justify-content: space-around;
+align-items: center;
+div {
+    width: 60%;
+}
 }
 
 .ml-button {
@@ -87,6 +104,7 @@ div {
 
 }
 
+/*Test the Machine Section*/
 .ml-container {
     display: flex;
     margin: 0 auto;
@@ -95,17 +113,6 @@ div {
     align-items: center;
     width: 60%;
 }
-
-.ml-video {
-    align-items: center;
-    text-align: center;
-}
-
-.video {
-    width: 70%;
-    max-width: 900px;
-}
-
 
 p, li {
     width: 90%;
@@ -120,6 +127,7 @@ img {
 }
 
 
+/*Smaller Screens*/
 @media (max-width: 1250px) { 
 .what-div, .how-div {
     display: block;

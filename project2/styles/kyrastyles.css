@@ -137,7 +137,7 @@ p {
 
 
 
-/*Tech Heroes*/
+/*Tech Heroes Page Styling*/
 .tech-heroes {
   display: block;
   background: rgb(1, 53, 6);
@@ -231,6 +231,7 @@ p {
   margin: 0 5%;
 }
 
+/* Smaller Screen */
 @media (max-width: 1250px) { 
   .left, .right {
     float: none;
@@ -247,7 +248,8 @@ p {
 }
 
 
-/* Resources Page */
+/* Resources Page Styling */
+/* Mini navigation */
 .scroll-icon {
   height: 100px;
 }
@@ -300,7 +302,7 @@ p {
   transform: rotate(-45deg);
   float:left;
 }
-
+/* Main page sections */
 .resources {
   display: block;
   padding: 30px 15px 70px 15px;
@@ -446,6 +448,7 @@ ul {
   margin: 5px auto;
 }
 
+/* For Smaller Screens */
 @media (max-width: 1250px) { 
 .inter-section, .ai-resources, .inter-resource-resources {
   display: block;
@@ -686,6 +689,7 @@ ul {
   -webkit-text-stroke-color: lightblue;
 }
 
+/*Mobile Screens*/
 @media (max-width: 768px) {
   /* Reduce large title size */
   .bottom-title {
