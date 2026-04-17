@@ -37,24 +37,25 @@
 
         // Convenience function to setup a webcam
         const flip = true; // whether to flip the webcam
-        if (!webcam) {
+        if (!webcam) {//prevents multiple webcam frames from being created
         webcam = new tmImage.Webcam(300, 300, flip); // width, height, flip
         await webcam.setup(); // request access to the webcam
         }
         await webcam.play();
         window.requestAnimationFrame(loop);
 
-        // append elements to the DOM
+        // append elements to the DOM and scroll so container is visible
         document.getElementById("webcam-container").appendChild(webcam.canvas);
         labelContainer = document.getElementById("label-container");
         for (let i = 0; i < maxPredictions; i++) { // add class labels
             labelContainer.appendChild(document.createElement("div"));
         }
+         document.getElementById("webcam-container").scrollIntoView()
         
     }
 
     async function loop() {
-      if (!active) return;
+      if (!active) return;//pauses predictions
         webcam.update(); // update the webcam frame
         await predict();
         window.requestAnimationFrame(loop);
@@ -73,7 +74,7 @@
 
     async function pause() {
       webcam.pause();
-      active = false;
+      active = false; //allows start() to be ran again
       
     }
 </script>
@@ -83,6 +84,7 @@
 <!--Machine Learning-->
 <h3>Meet The Machine</h3>
 <div class="ml-project">
+  <!--Introduction of the project-->
   <h4>About Our Project</h4>
   <p>
   Our machine identifies and categorizes an image using probability.
@@ -153,7 +155,7 @@ The categories for our machine learning project were chosen to match both the th
   <a href="https://teachablemachine.withgoogle.com/" target="_blank"><button class="learn-button">Teachable Machine</button></a>
 <p>You can also explore our code and sample photos:</p>
   <a href="https://github.com/mariapilar9701/mariapilar9701.github.io/tree/main/project2" target="_blank"><button class="learn-button">GitHub Repository</button></a>
-  <a href="https://teachablemachine.withgoogle.com/" target="_blank"><button class="learn-button">Sample Data Library</button></a>
+  <a href="https://github.com/mariapilar9701/mariapilar9701.github.io/tree/main/project2/pages/machine-learning/my_model/sample-images" target="_blank"><button class="learn-button">Sample Data Library</button></a>
 
 </div>
   <img src="../../images/moon.png" width="30%" alt="moon icon"/>
@@ -177,7 +179,7 @@ The categories for our machine learning project were chosen to match both the th
 <h4>
 <button type="button" class="ml-button" onclick="start()">Start</button>
 <button type="button" class="ml-button" onclick="pause()">Stop</button>
-<div class="ml-container">
+<div id="webcam" class="ml-container">
   <div id="webcam-container"></div>
   <div id="label-container"></div>
 </div>

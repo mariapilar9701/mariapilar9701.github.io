@@ -1,7 +1,11 @@
+html {
+    scroll-behavior: smooth;
+}
 body {
     margin: 0 auto;
     width: 80%;
 }
+
 .ml-video h4 {
         color: yellow;
 }
@@ -86,6 +90,7 @@ div {
 .ml-container {
     display: flex;
     margin: 0 auto;
+    padding-bottom: 100px;
     justify-content: space-around;
     align-items: center;
     width: 60%;
@@ -113,6 +118,7 @@ img {
 .ml-try ol {
     list-style-position: inside;
 }
+
 
 @media (max-width: 1250px) { 
 .what-div, .how-div {
