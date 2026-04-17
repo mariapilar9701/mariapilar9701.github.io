@@ -67,7 +67,7 @@
 /* HEADINGS */
 .page-heading,
 .section-title {
-  font-family: "Bytesquare", sans-serif;
+  font-family: "letter-gothic-recast", sans-serif;
   color: #ffe066;
   text-align: center;
   letter-spacing: 2px;
@@ -75,7 +75,7 @@
 }
 
 .page-heading {
-  font-size: clamp(2.8rem, 5vw, 4.8rem);
+  font-size: clamp(1.5rem, 4vw, 3.5rem);
   margin: 52px 0 52px 0;
   position: relative;
   z-index: 2;
@@ -90,7 +90,7 @@
 /* HERO SECTION */
 .hero-top-row {
   display: grid;
-  grid-template-columns: 270px 1fr;
+  grid-template-columns: 360px 1fr;
   gap: 42px;
   align-items: start;
   margin-bottom: 30px;
@@ -99,8 +99,9 @@
 .contents-box {
   background: #b9e0ff;
   border-radius: 28px;
-  padding: 26px 18px;
+  padding: 28px 22px;
   text-align: center;
+  width: 100%;
 }
 
 .contents-box h2 {
@@ -114,9 +115,10 @@
   display: block;
   color: black;
   text-decoration: none;
-  font-size: 1.25rem;
-  line-height: 1.55;
-  margin-bottom: 4px;
+  font-size: 1.15rem;
+  line-height: 1.45;
+  margin-bottom: 8px;
+  white-space: nowrap;
 }
 
 .contents-box a:hover {
@@ -132,10 +134,10 @@
 .intro-text {
   color: black;
   text-align: center;
-  font-size: clamp(1.45rem, 2.1vw, 2.1rem);
+  font-size: clamp(1.00rem, 1.8vw, 1.8rem);
   line-height: 1.45;
-  max-width: 720px;
-  margin: 0;
+  max-width: 650px;
+  margin: 10px;
 }
 
 .callout-line {
@@ -181,38 +183,7 @@
   letter-spacing: 1px;
   white-space: nowrap;
   margin: 0 0 16px 0;
-}
-
-.glow-text {
-  text-shadow:
-    0 0 6px #ffe066,
-    0 0 12px #ffe066,
-    0 0 24px #ffd700;
-  animation: glowPulse 2.6s ease-in-out infinite;
-}
-
-@keyframes glowPulse {
-  0% {
-    opacity: 1;
-    text-shadow:
-      0 0 6px #ffe066,
-      0 0 12px #ffe066,
-      0 0 20px #ffd700;
-  }
-  50% {
-    opacity: 0.72;
-    text-shadow:
-      0 0 10px #fff1a8,
-      0 0 22px #ffe066,
-      0 0 34px #ffd700;
-  }
-  100% {
-    opacity: 1;
-    text-shadow:
-      0 0 6px #ffe066,
-      0 0 12px #ffe066,
-      0 0 20px #ffd700;
-  }
+  text-shadow: none;
 }
 
 .quote {
@@ -221,7 +192,15 @@
   font-size: clamp(1.1rem, 1.6vw, 1.55rem);
   line-height: 1.55;
   max-width: 720px;
-  margin: 0 auto 24px auto;
+  margin: 0 auto 6px auto;
+}
+
+.quote-credit {
+  color: black;
+  text-align: center;
+  font-size: clamp(1rem, 1.3vw, 1.18rem);
+  margin: 0 auto 22px auto;
+  font-weight: 700;
 }
 
 .expand-container {
@@ -231,15 +210,18 @@
 }
 
 .joy-button {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
   width: 100%;
   background: #b9e0ff;
   color: black;
   border: none;
   border-radius: 999px;
-  padding: 20px 34px;
+  padding: 20px 28px;
   font-family: "letter-gothic-recast", sans-serif;
-  font-size: clamp(1.1rem, 1.7vw, 1.45rem);
+  font-size: clamp(1.05rem, 1.6vw, 1.35rem);
   font-weight: 700;
   line-height: 1.35;
   text-align: center;
@@ -247,9 +229,25 @@
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
+.joy-button span:first-child {
+  flex: 1;
+  text-align: center;
+}
+
 .joy-button:hover {
   transform: translateY(-2px);
   box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.2);
+}
+
+.accordion-arrow {
+  font-size: 1.2em;
+  line-height: 1;
+  transition: transform 0.25s ease;
+  flex-shrink: 0;
+}
+
+.expand-container.active .accordion-arrow {
+  transform: rotate(180deg);
 }
 
 .expand-text {
@@ -300,8 +298,9 @@
 }
 
 .large-button {
-  display: inline-block;
+  display: inline-flex;
   width: auto;
+  justify-content: center;
   padding-left: 36px;
   padding-right: 36px;
   text-decoration: none;
@@ -370,6 +369,50 @@
 .reflection-text {
   max-width: 1020px;
   margin: 0 auto;
+}
+
+.reflection-text p {
+  overflow: auto;
+}
+
+.reflection-sticker {
+  image-rendering: pixelated;
+  shape-rendering: crispEdges;
+  margin: 4px 0 10px 0;
+}
+
+.sticker-left {
+  float: left;
+  margin-right: 20px;
+}
+
+.sticker-right {
+  float: right;
+  margin-left: 20px;
+}
+
+.sticker-lightning {
+  width: 110px;
+}
+
+.sticker-cloud {
+  width: 110px;
+}
+
+.sticker-star {
+  width: 110px;
+}
+
+.sticker-ghost {
+  width: 92px;
+}
+
+.sticker-moon {
+  width: 120px;
+}
+
+.sticker-sun {
+  width: 92px;
 }
 
 /* BOTTOM NAV */
@@ -455,6 +498,10 @@
     right: 28px;
     display: none;
   }
+
+  .contents-box a {
+    white-space: normal;
+  }
 }
 
 @media (max-width: 980px) {
@@ -480,6 +527,11 @@
     width: 100%;
     max-width: 420px;
     margin: 0 auto 20px auto;
+  }
+
+  .contents-box {
+    max-width: 500px;
+    margin: 0 auto;
   }
 }
 
@@ -514,6 +566,17 @@
   .lessons-list {
     max-width: 680px;
   }
+
+  .sticker-cloud,
+  .sticker-star,
+  .sticker-moon {
+    width: 90px;
+  }
+
+  .sticker-ghost,
+  .sticker-sun {
+    width: 76px;
+  }
 }
 
 @media (max-width: 640px) {
@@ -532,7 +595,8 @@
   }
 
   .contents-box a {
-    font-size: 1.08rem;
+    font-size: 1.05rem;
+    white-space: normal;
   }
 
   .lessons-list li {
@@ -545,5 +609,19 @@
   .moon-icon,
   .sun-icon {
     transform: scale(0.78);
+  }
+
+  .joy-button {
+    padding: 18px 22px;
+  }
+
+  .accordion-arrow {
+    font-size: 1rem;
+  }
+
+  .reflection-sticker {
+    float: none;
+    display: block;
+    margin: 0 auto 14px auto;
   }
 }
